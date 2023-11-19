@@ -1,8 +1,9 @@
 return {
   {
     "fatih/vim-go",
-    lazy = false,
+    lazy = true,
     cmd = "GoUpdateBinaries",
+    ft = { "go" },
     config = function()
       vim.g.go_gopls_enabled = 1
       vim.g.go_fmt_command = "goimports"
