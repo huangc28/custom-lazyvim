@@ -4,3 +4,4 @@
 
 vim.api.nvim_set_keymap("n", "P", ":bprevious<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "N", ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-x>", ":bd<CR>", { noremap = true, silent = true })
