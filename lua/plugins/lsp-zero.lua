@@ -15,6 +15,13 @@ return {
     "rafamadriz/friendly-snippets",
     { "lukas-reineke/lsp-format.nvim", config = true },
   },
+  opts = function()
+    local cmp = require("cmp")
+
+    return {
+      mapping = cmp.mapping.preset,
+    }
+  end,
   config = function()
     local lsp = require("lsp-zero")
     lsp.preset("recommended")
