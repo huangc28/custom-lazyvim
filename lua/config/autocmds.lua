@@ -15,4 +15,13 @@ if vim.fn.has("autocmd") == 1 then
       vim.opt_local.softtabstop = 8
     end,
   })
+
+  -- Trimout trailing white space when buffer is saved to a file
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function()
+      local save_cursor = vim.api.nvim_win_get_cursor(0)
+      vim.api.nvim_win_get_cursor(0, save_cursor)
+    end,
+  })
 end
