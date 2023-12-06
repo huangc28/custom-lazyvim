@@ -1,3 +1,6 @@
+-- please refer to this reddit thread: https://www.reddit.com/r/neovim/comments/16t480s/making_goto_definition_work/
+-- to integrate proper keybinding for nvim-lspconfig e.g. 'gd', 'gD'
+
 return {
   "neovim/nvim-lspconfig",
   config = function()
