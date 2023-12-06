@@ -11,5 +11,14 @@ return {
     lspconfig.pyright.setup({})
     lspconfig.tsserver.setup({})
     lspconfig.helm_ls.setup({})
+
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(ev)
+        local opts = { buffer = ev.buf }
+
+        -- Jumps to the definition of the symbol under the cursor.
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+      end,
+    })
   end,
 }
