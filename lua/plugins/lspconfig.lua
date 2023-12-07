@@ -14,6 +14,7 @@ return {
     lspconfig.pyright.setup({})
     lspconfig.tsserver.setup({})
     lspconfig.helm_ls.setup({})
+    lspconfig.tailwindcss.setup({})
 
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(ev)
