@@ -15,6 +15,12 @@ return {
     lspconfig.tsserver.setup({})
     lspconfig.helm_ls.setup({})
     lspconfig.tailwindcss.setup({})
+    lspconfig.solidity.setup({
+      cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+      filetypes = { "solidity" },
+      root_dir = lspconfig.util.find_git_ancestor,
+      single_file_support = true,
+    })
 
     --Enable (broadcasting) snippet capability for completion
     local capabilities = vim.lsp.protocol.make_client_capabilities()

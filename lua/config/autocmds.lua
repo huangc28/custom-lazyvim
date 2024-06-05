@@ -16,6 +16,12 @@ if vim.fn.has("autocmd") == 1 then
     end,
   })
 
+  -- Set commentstring for Solidity files
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "solidity",
+    command = "setlocal commentstring=//\\ %s",
+  })
+
   -- Trimout trailing white space when buffer is saved to a file
   vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
