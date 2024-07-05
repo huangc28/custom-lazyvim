@@ -1,10 +1,19 @@
 -- https://www.reddit.com/r/neovim/comments/pob6wx/setting_up_nvimcmp/
 return {
   "hrsh7th/nvim-cmp",
+  dependencies = {
+    "saadparwaiz1/cmp_luasnip",
+  },
   config = function()
     local cmp = require("cmp")
     cmp.setup({
+      snippet = {
+        expand = function(args)
+          require("luasnip").lsp_expand(args.body)
+        end,
+      },
       sources = {
+        { name = "luasnip", option = { show_autosnippets = true } },
         { name = "nvim_lsp" },
         { name = "vsnip" },
         { name = "path" },
