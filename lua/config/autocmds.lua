@@ -31,4 +31,5 @@ if vim.fn.has("autocmd") == 1 then
       vim.api.nvim_win_set_cursor(0, save_cursor)
     end,
   })
+
 end

@@ -15,3 +15,17 @@ vim.api.nvim_set_keymap("n", "<C-\\>", ":NvimTmuxNavigateLastActive<CR>", { nore
 vim.api.nvim_set_keymap("n", "<C-Space>", ":NvimTmuxNavigateNext<CR>", { noremap = true, silent = true })
 
 -- telescope
+
+--- kulala
+vim.api.nvim_create_autocmd("FileType", {
+     pattern = "http",
+     callback = function()
+       vim.api.nvim_buf_set_keymap(
+         0,
+         "n",
+         "<CR>",
+         "<cmd>lua require('kulala').run()<cr>",
+         { noremap = true, silent = true, desc = "Execute the request" }
+       )
+     end,
+   })
