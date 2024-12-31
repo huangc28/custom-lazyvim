@@ -8,3 +8,6 @@ vim.filetype.add({
     ["http"] = "http",
   },
 })
+
+-- disable blink and switch back to nvim-cmp
+vim.g.lazyvim_cmp = "nvim-cmp"
