@@ -27,7 +27,9 @@ return {
         path = "~/vaults/work",
       },
     },
-
-    -- see below for full list of options 👇
+    follow_url_func = function(url)
+      -- Open the URL in the default web browser.
+      vim.fn.jobstart({ "open", url }) -- Mac OS
+    end,
   },
 }
