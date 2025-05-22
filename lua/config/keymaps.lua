@@ -18,14 +18,19 @@ vim.api.nvim_set_keymap("n", "<C-Space>", ":NvimTmuxNavigateNext<CR>", { noremap
 
 --- kulala
 vim.api.nvim_create_autocmd("FileType", {
-     pattern = "http",
-     callback = function()
-       vim.api.nvim_buf_set_keymap(
-         0,
-         "n",
-         "<CR>",
-         "<cmd>lua require('kulala').run()<cr>",
-         { noremap = true, silent = true, desc = "Execute the request" }
-       )
-     end,
-   })
+  pattern = "http",
+  callback = function()
+    vim.api.nvim_buf_set_keymap(
+      0,
+      "n",
+      "<CR>",
+      "<cmd>lua require('kulala').run()<cr>",
+      { noremap = true, silent = true, desc = "Execute the request" }
+    )
+  end,
+})
+
+-- Copilot
+-- vim.keymap.set("i", "<Tab>", function()
+--   return require("copilot.suggestion").accept_or_next()
+-- end, { expr = true, silent = true })

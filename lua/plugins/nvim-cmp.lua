@@ -13,6 +13,7 @@ return {
         end,
       },
       sources = {
+        { name = "copilot", group_index = 2 },
         { name = "luasnip", option = { show_autosnippets = true } },
         { name = "nvim_lsp" },
         { name = "vsnip" },
