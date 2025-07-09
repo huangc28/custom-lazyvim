@@ -11,3 +11,6 @@ vim.filetype.add({
 
 -- disable blink and switch back to nvim-cmp
 vim.g.lazyvim_cmp = "nvim-cmp"
+
+-- use pyright (default) or "basedpyright" / "ruff_lsp"
+vim.g.lazyvim_python_lsp = "pyright"
