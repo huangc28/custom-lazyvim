@@ -4,6 +4,13 @@ return {
   event = "InsertEnter",
   config = function()
     require("copilot").setup({
+      suggestion = {
+        enabled = false,
+        auto_trigger = true,
+        keymap = {
+          accept = "<TAB>",
+        },
+      },
       panel = {
         enabled = true,
         auto_refresh = true,
@@ -14,16 +21,7 @@ return {
           accept = "<CR>",
           refresh = "gr",
         },
-        layout = {},
       },
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        keymap = {
-          accept = "<TAB>",
-        },
-      },
-      panel = { enabled = true },
     })
   end,
 }

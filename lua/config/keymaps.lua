@@ -34,3 +34,8 @@ vim.api.nvim_create_autocmd("FileType", {
 -- vim.keymap.set("i", "<Tab>", function()
 --   return require("copilot.suggestion").accept_or_next()
 -- end, { expr = true, silent = true })
+
+-- Avante mode toggle helpers
+local avante_helpers = require("config.avante-helpers")
+vim.keymap.set("n", "<leader>aa", avante_helpers.agent, { desc = "Avante → agentic mode" })
+vim.keymap.set("n", "<leader>ap", avante_helpers.plan, { desc = "Avante → legacy/planning mode" })
