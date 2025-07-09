@@ -14,18 +14,16 @@ return {
     ---------------------------------------------------------------------------
     --  🚀  Minimum viable config
     ---------------------------------------------------------------------------
-    provider = "claude",
+    provider = "copilot",
+    web_search_engine = { provider = nil },
     providers = {
-      claude = {
-        endpoint = "https://api.anthropic.com",
+      copilot = {
         model = "claude-sonnet-4-20250514",
-        timeout = 30000, -- ms
-        extra_request_body = { temperature = 0.7, max_tokens = 4096 },
+        timeout = 20000,
       },
     },
     behaviour = {
-      auto_suggestions = true, -- enable ghost-text
-      auto_suggestions_provider = "claude",
+      auto_suggestions = false, -- enable ghost-text
     },
   },
 
