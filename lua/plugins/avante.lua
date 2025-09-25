@@ -14,12 +14,25 @@ return {
     ---------------------------------------------------------------------------
     --  🚀  Minimum viable config
     ---------------------------------------------------------------------------
-    provider = "copilot",
+    provider = "gemini",
     web_search_engine = { provider = nil },
     providers = {
       copilot = {
         model = "claude-sonnet-4",
         timeout = 20000,
+      },
+      gemini = {
+        -- change these only if you have a strong reason
+        model = "gemini-2.5-pro", -- or "gemini-2.5-flash" for lower latency
+        timeout = 300000, -- ms; raise for heavy prompts
+        -- request-body overrides go here:
+        extra_request_body = {
+          generationConfig = { -- maps 1-to-1 to Google’s REST JSON
+            temperature = 0,
+            maxOutputTokens = 2048,
+            topP = 0.95,
+          },
+        },
       },
     },
     behaviour = {

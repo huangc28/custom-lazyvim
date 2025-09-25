@@ -22,10 +22,22 @@ if vim.fn.has("autocmd") == 1 then
     command = "setlocal commentstring=//\\ %s",
   })
 
+  -- Disable auto-formatting for .http files
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "http",
+    callback = function()
+      vim.b.autoformat = false
+    end,
+  })
+
   -- Trimout trailing white space when buffer is saved to a file
   vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     callback = function()
+      -- Skip for http files
+      if vim.bo.filetype == "http" then
+        return
+      end
       local save_cursor = vim.api.nvim_win_get_cursor(0)
       vim.cmd([[ %s/\s\+$//e ]])
       vim.api.nvim_win_set_cursor(0, save_cursor)
